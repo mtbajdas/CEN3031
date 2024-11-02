@@ -71,7 +71,7 @@ const CreateAccount = () => {
     return (
         <div>
         <h1 className="text-5xl p-11 font-semibold text-slate-300 items-center flex justify-center">Clinder</h1>
-        <div className="items-center flex h-screen justify-center">
+        <div className="items-center flex justify-center">
             
         <div className="bg-slate-100 p-8  rounded-md">
             <h1 className="text-3xl text-slate-700 pb-4">Create Account: </h1>

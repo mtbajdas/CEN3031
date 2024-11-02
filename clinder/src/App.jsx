@@ -6,6 +6,7 @@ import LoginPage from './LoginPage'
 import CreateAccount from './CreateAccount';
 import Navbar from './Navbar';
 import Home from './Home';
+import Profile from './Profile';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<LoginPage/>}/>
           <Route path="/create-account" element={<CreateAccount/>}/>
           <Route path="/home" element={<Home/>}/>
+          <Route path="/profile" element={<Profile/>}/>
         </Routes>
       </BrowserRouter>
     </div>
