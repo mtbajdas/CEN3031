@@ -2,7 +2,6 @@ import React from 'react'
 import { auth } from './firebase';
 import ClubBox from './ClubBox';
 
-
 const Home = () => {
     // getAuth()
     // .getUserByEmail(email)
