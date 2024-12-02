@@ -26,7 +26,7 @@ for name, row in sheet.iterrows():
 
     const ${{ valid }}Page = () =>{
         return(
-        <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-8">
+        <div className="max-w-2xl mx-auto bg-white shadow-md rounded-lg p-8 mt-12">
                 <h1 className="text-4xl font-bold text-center text-slate-700 mb-4">
                     {{ org }}
                 </h1>
