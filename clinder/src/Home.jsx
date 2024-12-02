@@ -19,7 +19,7 @@ const Home = () => {
             <div className="flex justify-center">
                 <ClubBox clubName="UF ACM"/>
                 <ClubBox clubName="WICSE"/>
-                <ClubBox clubName="SHPE"/>
+                <ClubBox clubName="Society of Hispanic Professional Engineers"/>
             </div>
         </div>
     )

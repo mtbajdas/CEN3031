@@ -7,6 +7,8 @@ import CreateAccount from './CreateAccount';
 import Navbar from './Navbar';
 import Home from './Home';
 import Profile from './Profile';
+import routes from './routes';
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,6 +22,12 @@ function App() {
           <Route path="/create-account" element={<CreateAccount/>}/>
           <Route path="/home" element={<Home/>}/>
           <Route path="/profile" element={<Profile/>}/>
+          <Route path="/clubs/:id" element={<Home/>}/>
+          {routes.map((route)=>{
+            return(
+              <Route path={route.path} element = {route.component} />
+            )
+          })}
         </Routes>
       </BrowserRouter>
     </div>
