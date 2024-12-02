@@ -3,6 +3,7 @@ import { auth } from './firebase';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import PreferencesForm from './PreferencesForm';
+import ClubsForm from './ClubsForm';
 
 const Profile = () => {
     // getAuth()
@@ -17,9 +18,10 @@ const Profile = () => {
     const [user, setUser] = useState('')
 
 
-    useEffect(()=>{
-        auth.onAuthStateChanged((data)=>{
+    useEffect(() =>{
+         auth.onAuthStateChanged((data)=>{
             setUser(data);
+            localStorage.setItem("uid",data.uid);
         })
     },[])
     return (
@@ -35,6 +37,7 @@ const Profile = () => {
                 <div className="flex-1 bg-slate-100 text-slate-700 p-4 rounded-md shadow-md">
                 <h2 className="text-lg font-bold">Added Clubs</h2>
                 <p>See your added clubs here!</p>
+                <ClubsForm userId={user.uid}/>
                 </div>
             </div>
         
