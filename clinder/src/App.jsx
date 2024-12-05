@@ -23,7 +23,7 @@ function App() {
   return (
     <div className="justify-center">
       <BrowserRouter>
-        <Navbar/>
+        <Navbar user={user} />
         <Routes>
           <Route path="/" element={<LoginPage/>}/>
           <Route path="/create-account" element={<CreateAccount/>}/>
