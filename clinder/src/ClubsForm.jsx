@@ -55,7 +55,7 @@ const GetClubs = ({ userId }) => {
       {clubs.length > 0 ? (
         <ul>
           {clubs.map((club, index) => (
-            <li key={index} className="flex justify-between items-center">
+            <li key={index} className="flex justify-between items-center m-2">
               <span>{club}</span>
               <button
                 onClick={() => handleRemoveClub(club)}
