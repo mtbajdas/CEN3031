@@ -80,7 +80,7 @@ const CreateAccount = () => {
                 <input className="rounded-sm m-2 p-1" placeholder='password' onChange={handleChange} name='password' value={password}/>
                 <button className="m-2 bg-slate-700 active:bg-black hover:bg-slate-900" type='submit'>Submit</button>
                 {error && <p className="text-slate-700 pb-4">{errorMessage}</p>}
-                {accountCreated && navigate("/home")}
+                {accountCreated && navigate("/profile")}
             </form>
         </div>
         </div>

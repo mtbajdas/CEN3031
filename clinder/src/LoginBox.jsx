@@ -25,7 +25,7 @@ const LoginBox = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
-            if (user) navigate("/home");
+            if (user) navigate("/profile");
         } catch (err) {
             setError(true);
             switch (err.code) {
