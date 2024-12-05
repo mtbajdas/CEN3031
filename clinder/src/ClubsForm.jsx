@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import db from './firebase'; // Adjust this import according to your firebase config
+import { db } from './firebase'; // Adjust this import according to your firebase config
 import { doc, getDoc } from 'firebase/firestore';
 
 const GetClubs = ({ userId }) => {

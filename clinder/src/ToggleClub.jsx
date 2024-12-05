@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import db from './firebase'; // Adjust path to your firebase config
+import { db } from './firebase'; // Adjust path to your firebase config
 import { doc, getDoc, setDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore';
 
 const ToggleClub = ({ userId, clubName }) => {
@@ -74,7 +74,7 @@ const ToggleClub = ({ userId, clubName }) => {
     <div>
       <button
         onClick={toggleClub}
-        className={`w-full py-2 px-4 rounded focus:outline-none ${isClubSelected ? 'bg-red-600' : 'bg-blue-600'} text-white`}
+        className={`w-full py-2 px-4 rounded focus:outline-none ${isClubSelected ? 'bg-red-600' : 'bg-blue-600'} text-white py-2 px-4 rounded overflow-hidden text-ellipsis whitespace-nowrap w-full`}
       >
         {isClubSelected ? `Remove ${clubName}` : `Add ${clubName}`}
       </button>

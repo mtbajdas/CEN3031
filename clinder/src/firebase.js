@@ -25,8 +25,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
-
 const auth = getAuth(app);
-export {app, auth};
-export default db;
+
+export { app, auth, db };
 //createUserWithEmailAndPassword(auth, email, password);
