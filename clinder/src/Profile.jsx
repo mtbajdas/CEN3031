@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import PreferencesForm from './PreferencesForm';
 import ClubsForm from './ClubsForm';
+import SignoutButton from './SignoutButton';
 
 const Profile = () => {
     // getAuth()
@@ -26,7 +27,10 @@ const Profile = () => {
     },[])
     return (
         <div>
-            <h1 className="text-5xl p-11 font-semibold text-slate-300 items-center flex justify-center">{user.email}'s Profile</h1>
+            <div className="flex items-center justify-between p-4">
+                <h1 className="text-5xl p-11 font-semibold text-slate-300 items-center flex justify-center">{user.email}'s Profile</h1>
+                <SignoutButton/>
+            </div>
             <div className="flex flex-col md:flex-row gap-4 p-4">
                 <div className="flex-1 bg-slate-100 text-slate-700 p-4 rounded-md shadow-md">
                     <h2 className="text-lg font-bold">Preferences</h2>
