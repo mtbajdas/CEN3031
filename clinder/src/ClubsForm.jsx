@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { db } from './firebase'; // Adjust this import according to your firebase config
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc, arrayRemove } from 'firebase/firestore';
 
 const GetClubs = ({ userId }) => {
   const [clubs, setClubs] = useState([]);
@@ -33,6 +33,19 @@ const GetClubs = ({ userId }) => {
     fetchClubs();
   }, [userId]);
 
+  const handleRemoveClub = async (clubName) => {
+    try {
+      const userDocRef = doc(db, "users", userId);
+      await updateDoc(userDocRef, {
+        clubs: arrayRemove(clubName),
+      });
+
+      setClubs((prevClubs) => prevClubs.filter((club) => club !== clubName));
+    } catch (error) {
+      console.error("Error removing club:", error);
+    }
+  };
+
   if (loading) {
     return <p>Loading clubs...</p>;
   }
@@ -42,7 +55,15 @@ const GetClubs = ({ userId }) => {
       {clubs.length > 0 ? (
         <ul>
           {clubs.map((club, index) => (
-            <li key={index}>{club}</li>
+            <li key={index} className="flex justify-between items-center">
+              <span>{club}</span>
+              <button
+                onClick={() => handleRemoveClub(club)}
+                className="ml-4 bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600"
+              >
+                X
+              </button>
+            </li>
           ))}
         </ul>
       ) : (
