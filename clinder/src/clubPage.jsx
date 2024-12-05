@@ -4,8 +4,10 @@ import ClubData from './clubsfile.json'
 import ToggleClub from './ToggleClub'
 
 const ClubPage = ({userId}) => {
+    //grabbing the clubName from the address route.
     const clubName = useParams();
 
+//Sorting through clubsfile.json to retrieve club information to populate page
 const club = ClubData.find(item => item.Organization === clubName.clubid);
 
     return(
