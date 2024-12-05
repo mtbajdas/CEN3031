@@ -54,14 +54,12 @@ const ToggleClub = ({ userId, clubName }) => {
             clubs: arrayRemove(clubName),
           });
           setIsClubSelected(false); // Update UI
-          alert(`${clubName} has been removed from your profile.`);
         } else {
           // If club is not in the list, add it
           await updateDoc(userDocRef, {
             clubs: arrayUnion(clubName),
           });
           setIsClubSelected(true); // Update UI
-          alert(`${clubName} has been added to your profile.`);
         }
       }
     } catch (error) {
