@@ -21,10 +21,14 @@ const ClubBox = (props) => {
             setUser(data);
         })
     },[])
-
+    const navigate = useNavigate();
+    const pageTransport = () => {
+        navigate(`/clubs/${props.clubName}`);
+    };
+  
     return (
         
-        <div className="bg-slate-100 p-6 rounded-md flex flex-col items-center max-w-xs w-64 m-4 shadow-md">
+        <div onClick = {pageTransport} className="bg-slate-100 p-6 rounded-md flex flex-col items-center max-w-xs w-64 m-4 shadow-md">
             <h1 className="text-lg font-bold text-slate-700 text-center overflow-hidden text-ellipsis whitespace-nowrap w-full">{props.clubName}</h1>
             <div className="w-full mt-4">
                 <ToggleClub clubName={props.clubName} userId={user.uid}/>

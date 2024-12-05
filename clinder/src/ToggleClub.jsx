@@ -7,6 +7,7 @@ const ToggleClub = ({ userId, clubName }) => {
   const [clubs, setClubs] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const fetchClubs = async () => {
       try {
@@ -37,9 +38,9 @@ const ToggleClub = ({ userId, clubName }) => {
   }, [userId]);
 
   
-  const toggleClub = async () => {
+  const toggleClub = async (event) => {
     const userDocRef = doc(db, 'users', userId);
-
+    event.stopPropagation();
     try {
       // Fetch the user's current profile to check if the club is already added
       const userDoc = await getDoc(userDocRef);
