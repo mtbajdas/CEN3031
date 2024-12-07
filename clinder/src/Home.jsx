@@ -5,15 +5,6 @@ import { db } from './firebase';
 import ClubBox from './ClubBox';
 
 const Home = ({ userId }) => {
-    // getAuth()
-    // .getUserByEmail(email)
-    // .then((userRecord) => {
-    //     // See the UserRecord reference doc for the contents of userRecord.
-    //     console.log(`Successfully fetched user data: ${userRecord.toJSON()}`);
-    // })
-    // .catch((error) => {
-    //     console.log('Error fetching user data:', error);
-    // });
     const [clubs, setClubs] = useState([]);
     const [filteredClubs, setFilteredClubs] = useState([]);
     const [userPreferences, setUserPreferences] = useState([]);
@@ -99,22 +90,25 @@ const Home = ({ userId }) => {
 
     return (
         <div>
-          <h1 className="text-5xl p-11 font-semibold text-slate-300 items-center flex justify-center">
-            Welcome!
-          </h1>
-          <h2 className="text-2xl p-6 font-semibold text-slate-300 items-center flex justify-center">
-            Clubs Matching Your Preferences:
-          </h2>
+            <h1 className="text-5xl p-11 font-semibold text-slate-300 items-center flex justify-center">
+                Welcome!
+            </h1>
+            <h2 className="text-2xl p-6 font-semibold text-slate-300 items-center flex justify-center">
+                Clubs Matching Your Preferences:
+            </h2>
     
-          <div className="overflow-x-scroll whitespace-nowrap px-6">
-            <div className="flex space-x-4">
-              {filteredClubs.map((club, index) => (
-                <ClubBox key={index} clubName={club.Organization} clubDesc={club.Description} />
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6">
+                {filteredClubs.map((club, index) => (
+                    <ClubBox key={index} clubName={club.Organization} clubDesc={club.Description} />
+                ))}
             </div>
-          </div>
         </div>
-      );
+    );
 };
 
 export default Home;
+
+
+
+
+
